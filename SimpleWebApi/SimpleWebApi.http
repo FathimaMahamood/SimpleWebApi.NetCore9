@@ -1,0 +1,79 @@
+@rootUrl = http://localhost:5030
+
+GET {{rootUrl}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{rootUrl}}/api/Department
+Accept: application/json
+
+###
+GET {{rootUrl}}/api/Department/1
+Accept: application/json
+
+###
+POST {{rootUrl}}/api/Department
+Content-Type: application/json
+{
+    "id": 8,
+    "code": "SALES",
+    "name": "Sales"
+}
+###
+PUT {{rootUrl}}/api/Department/6
+Content-Type: application/json
+{
+    
+    "code": "CEO",
+    "name": "Ceo"
+}
+###
+DELETE {{rootUrl}}/api/Department/6
+
+
+###
+GET {{rootUrl}}/api/Employee?page=1&pageSize=4&sortBy=employeeId&orderBy=asc
+Accept:application/json
+###
+GET {{rootUrl}}/api/Employee/1003
+Accept:application/json
+
+###
+POST {{rootUrl}}/api/Employee
+Content-Type:application/json
+{
+  
+  "employeeId": "1005",
+  "employeeName": "Sara",
+  "dateOfBirth": "2003-06-02",
+  "gender": "Female",
+  "department": 1,
+  "joiningDate": "2023-07-20",
+  "phone": "8765456783",
+  "active": true
+}
+###
+PUT {{rootUrl}}/api/Employee/1003
+Content-Type:application/json
+{
+  
+  "employeeId": "1003",
+  "employeeName": "Henry",
+  "dateOfBirth": "2009-03-11",
+  "gender": "Male",
+  "department": 3,
+  "joiningDate": "2020-07-22",
+  "phone": "784778993",
+  "active": false
+}
+###
+DELETE {{rootUrl}}/api/Employee/1004
+
+
+###
+HEAD {{rootUrl}}/api/Employee/1001
+
+
+
+
+
